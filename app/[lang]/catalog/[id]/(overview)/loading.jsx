@@ -1,3 +1,4 @@
+import DeliveryInfo from '@/app/ui/deliveryInfo/DeliveryInfo';
 import SectionWrapper from '@/app/ui/sectionWrapper/SectionWrapper';
 import SkeletonSingleProduct from '@/app/ui/skeletons/SkeletonSingleProduct';
 
