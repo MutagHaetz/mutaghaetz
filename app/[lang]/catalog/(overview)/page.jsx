@@ -1,7 +1,4 @@
-import { Grid } from '@chakra-ui/react';
 import Contact from '@/app/ui/contact/Contact';
-import SectionWrapper from '@/app/ui/sectionWrapper/SectionWrapper';
-import ProductItem from '@/app/ui/productItem/ProductItem';
 import { Suspense } from 'react';
 import SkeletonProductsGrid from '@/app/ui/skeletons/SkeletonProducts';
 import { getDictionary } from '@/app/lib/locales/dictionary';
