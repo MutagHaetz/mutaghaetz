@@ -34,12 +34,13 @@ const Contact = ({ lang, dictionary, contacts }) => {
                 }}
                 transition={'all 0.3s'}
               >
-                <MdLocationOn color="#a28445" size="20px" />
+                <MdLocationOn color="#a28445" size="24px" />
                 {addressUrl && address && (
                   <Link
                     _hover={{ textDecoration: 'none' }}
                     href={addressUrl}
                     rel={'noopener noreferrer nofollow'}
+                    target="_blank"
                   >
                     <Text>{address}</Text>
                   </Link>
