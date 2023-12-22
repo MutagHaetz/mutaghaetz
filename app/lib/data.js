@@ -2,8 +2,8 @@ import {
   MdAnalytics,
   MdShoppingBag,
   MdSupervisedUserCircle,
-  MdWork,
   MdHome,
+  MdPhonelinkRing,
 } from 'react-icons/md';
 
 export const menuIcons = [
@@ -15,7 +15,7 @@ export const menuIcons = [
 
   <MdSupervisedUserCircle size={30} key={'3'} />,
 
-  <MdWork size={30} key={'4'} />,
+  <MdPhonelinkRing size={30} key={'4'} />,
 ];
 
 export const metaKeywords = [
