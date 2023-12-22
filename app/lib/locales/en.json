@@ -36,6 +36,7 @@
     "wood": "Wood: ",
     "type": "Type: ",
     "manufacturer": "Manufacturer: ",
+    "price": "Price: ",
     "pickup": {
       "title": "Delivery",
       "self": "Self-Pickup: Collection of products from the store, address Amsterdam Street 3, Sderot.",

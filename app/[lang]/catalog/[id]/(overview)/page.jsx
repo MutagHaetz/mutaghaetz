@@ -9,6 +9,7 @@ import SingleProduct from '@/app/ui/singleProduct/SingleProduct';
 import { Suspense } from 'react';
 import LoadingProduct from './loading';
 import { getDictionary } from '@/app/lib/locales/dictionary';
+import DeliveryInfo from '@/app/ui/deliveryInfo/DeliveryInfo';
 
 //Prefetching first six items of collection to generate pages on server before visiting:
 
@@ -54,13 +55,14 @@ const SingleProductPage = async ({ params: { id, lang } }) => {
 
   return (
     <>
-      <Suspense fallback={<LoadingProduct />}>
+      <Suspense fallback={<LoadingProduct dictionary={dictionary} />}>
         <SingleProduct
           product={product}
           dictionary={dictionary}
           contacts={contacts}
         />
       </Suspense>
+      <DeliveryInfo dictionary={dictionary} />
       <Contact lang={lang} dictionary={dictionary} contacts={contacts} />
     </>
   );
