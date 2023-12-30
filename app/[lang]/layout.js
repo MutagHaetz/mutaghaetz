@@ -12,6 +12,7 @@ import { getDictionary } from '../lib/locales/dictionary';
 import SocialLinks from '../ui/socialLinks/SocialLinks';
 import { metaKeywords } from '../lib/data';
 import { fetchContacts } from '../lib/api/instance';
+import Script from 'next/script';
 
 const inter = Montserrat({ subsets: ['latin'] });
 
@@ -62,6 +63,21 @@ export default async function RootLayout({ children, params: { lang } }) {
         type="image/x-icon"
         sizes="48x48"
       />
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+        `}
+      </Script>
+
       <Box
         as="body"
         bg={'#181617'}
