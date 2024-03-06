@@ -1,113 +1,185 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Box, Button, Flex, useDisclosure } from '@chakra-ui/react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import NavBar from '@/app/ui/navbar/NavBar';
 import SectionWrapper from '@/app/ui/sectionWrapper/SectionWrapper';
-import { GiHamburgerMenu } from 'react-icons/gi';
 
-import TopBar from '../topBar/TopBar';
+import { Box, Button, Flex, useDisclosure } from '@chakra-ui/react';
+
+import { useLocalBag } from '@/app/lib/hooks/useLocalBag';
+
+import ContactsList from '../../contactsList/ContactsList';
+import LocaleSwitcher from '../../localeSwitcher/LocaleSwitcher';
+import Burger from '../../svg/Burger';
 import MobileMenu from '../mobileMenu/MobileMenu';
+import ToolBar from '../toolBar/ToolBar';
 
-const HeaderWrapper = ({ lang, dictionary, contacts }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
+const HeaderWrapper = ({
+	lang,
+	dictionary,
+	contacts,
+	bagData = { goods: [] },
+	favorites,
+	isAuth,
+}) => {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const btnRef = useRef();
 
-  const [scrolling, setScrolling] = useState(false);
-  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-  const [headerStyle, setHeaderStyle] = useState({});
+	const [hasToken, setHasToken] = useState(false);
+	const [scrolling, setScrolling] = useState(false);
+	const [prevScrollPosition, setPrevScrollPosition] = useState(0);
+	const [headerStyle, setHeaderStyle] = useState({});
+	const [localBag, setLocalBag] = useLocalBag('localBag', []);
+	const [bagLength, setBagLength] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPosition = window.scrollY;
-      const scrollingDown =
-        prevScrollPosition < currentScrollPosition &&
-        currentScrollPosition > 100;
+	useEffect(() => {
+		setHasToken(isAuth);
 
-      setScrolling(scrollingDown);
-      setPrevScrollPosition(currentScrollPosition);
+		if (isAuth) {
+			const nonEmptyGoods = bagData.goods.filter(({ good }) => good.data);
 
-      const headerStyleAfterScroll = {
-        transition: 'transform 1s ease-in-out',
-        transform: scrollingDown ? 'translateY(-100%)' : 'translateY(0)',
-      };
+			setLocalBag(bagData && nonEmptyGoods);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isAuth]);
 
-      setHeaderStyle(headerStyleAfterScroll);
-    };
+	useEffect(() => {
+		setBagLength(localBag.length);
+	}, [bagData, hasToken, localBag.length, setLocalBag]);
 
-    const cleanupScroll = () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+	useEffect(() => {
+		const handleScroll = () => {
+			const currentScrollPosition = window.scrollY;
+			const scrollingDown =
+				prevScrollPosition < currentScrollPosition &&
+				currentScrollPosition > 100;
 
-    window.addEventListener('scroll', handleScroll);
+			setScrolling(scrollingDown);
+			setPrevScrollPosition(currentScrollPosition);
 
-    return cleanupScroll;
-  }, [prevScrollPosition, scrolling]);
+			const headerStyleAfterScroll = {
+				transition: 'transform 1.5s ease-in-out',
+				transform: scrollingDown ? 'translateY(-100%)' : 'translateY(0)',
+			};
 
-  return (
-    <SectionWrapper
-      as={'header'}
-      position={'fixed'}
-      w="100%"
-      bg="linear-gradient(180deg, rgba(0,0,0,1) 16%, rgba(66,72,80,0) 98%)"
-      py={{ base: '12px', lg: '16px', xl: '18px' }}
-      pt="0"
-      zIndex="99"
-      style={headerStyle}
-    >
-      <Box display={{ base: 'none', lg: 'block' }}>
-        <TopBar lang={lang} contacts={contacts} />
-      </Box>
-      <Flex justify={'space-between'} alignItems={'center'} py={'16px'}>
-        <Link href={'/' + lang}>
-          <Image
-            src={'/logo.png'}
-            alt="logo"
-            width="180"
-            height="60"
-            style={{
-              objectFit: 'cover',
-              width: 180,
-              height: 60,
-              display: 'block',
-            }}
-          />
-        </Link>
-        <Box as="nav" display={{ base: 'none', lg: 'block' }}>
-          <NavBar
-            lang={lang}
-            flexDir="row"
-            dictionary={dictionary}
-            onClose={onClose}
-          />
-        </Box>
-        <Box display={{ base: 'block', lg: 'none' }}>
-          <Button
-            variant={'ghost'}
-            color={'#a98841'}
-            _hover={{ color: '#81672e' }}
-            transition={'all 0.3s'}
-            onClick={onOpen}
-            ref={btnRef}
-          >
-            <GiHamburgerMenu size={'40'} />
-          </Button>
-        </Box>
-      </Flex>
+			setHeaderStyle(headerStyleAfterScroll);
+		};
 
-      <MobileMenu isOpen={isOpen} onClose={onClose}>
-        <NavBar
-          flexDir="column"
-          lang={lang}
-          dictionary={dictionary}
-          onClose={onClose}
-        />
-        <TopBar lang={lang} flexDir="column" gap="32px" contacts={contacts} />
-      </MobileMenu>
-    </SectionWrapper>
-  );
+		const cleanupScroll = () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return cleanupScroll;
+	}, [prevScrollPosition, scrolling]);
+
+	return (
+		<SectionWrapper
+			as={'header'}
+			position={'fixed'}
+			w="100%"
+			bg="linear-gradient(180deg, rgba(0,0,0,1) 16%, rgba(66,72,80,0) 98%)"
+			zIndex="99"
+			pb={{ base: '12px', lg: '16px' }}
+			pt={'12px'}
+			py={'0'}
+			style={headerStyle}
+		>
+			<Flex
+				alignItems={'center'}
+				justifyContent={'space-between'}
+				display={{ base: 'none', lg: 'flex' }}
+			>
+				<ContactsList lang={lang} contacts={contacts} />
+
+				<ToolBar
+					lang={lang}
+					hasToken={hasToken}
+					bagData={bagData}
+					dictionary={dictionary}
+					bagLength={bagLength}
+					favorites={
+						hasToken && favorites && favorites[0] && favorites[0].goods
+							? favorites[0].goods
+							: []
+					}
+					favId={hasToken && favorites && favorites[0]?.id}
+				/>
+				<LocaleSwitcher />
+			</Flex>
+
+			<Flex justify={'space-between'} alignItems={'center'}>
+				<Link href={'/' + lang}>
+					<Box position="relative" w={'180px'} height={'60px'}>
+						<Image
+							src={'/img/logo.png'}
+							alt="logo"
+							priority
+							fill
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+							style={{
+								objectFit: 'cover',
+							}}
+						/>
+					</Box>
+				</Link>
+				<Box as="nav" display={{ base: 'none', lg: 'block' }}>
+					<NavBar
+						lang={lang}
+						flexDir="row"
+						dictionary={dictionary}
+						onClose={onClose}
+					/>
+				</Box>
+
+				<Flex
+					alignItems={'center'}
+					justifyContent={'space-between'}
+					display={{ base: 'flex', lg: 'none' }}
+				>
+					<ToolBar
+						lang={lang}
+						hasToken={hasToken}
+						bagData={bagData}
+						bagLength={bagLength}
+						favorites={
+							hasToken && favorites && favorites[0] && favorites[0].goods
+								? favorites[0].goods
+								: []
+						}
+						dictionary={dictionary}
+						displayIcons={['SEARCH_ICON', 'BAG_ICON']}
+					/>
+
+					<Button
+						display={{ base: 'block', lg: 'none' }}
+						variant={'ghost'}
+						color={'#a98841'}
+						_hover={{ color: '#81672e' }}
+						transition={'all 0.3s'}
+						onClick={onOpen}
+						ref={btnRef}
+					>
+						<Burger />
+					</Button>
+				</Flex>
+			</Flex>
+
+			<MobileMenu
+				key={hasToken}
+				isOpen={isOpen}
+				onClose={onClose}
+				hasToken={hasToken}
+				lang={lang}
+				dictionary={dictionary}
+			/>
+		</SectionWrapper>
+	);
 };
 
 export default HeaderWrapper;

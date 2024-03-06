@@ -1,153 +1,358 @@
 {
-  "buttons": {
-    "view": "View",
-    "contact": "Contact us",
-    "send": "Send",
-    "buy": "BUY"
-  },
-  "header": {
-    "navItems": [
-      {
-        "title": "Home",
-        "path": "/"
-      },
-      {
-        "title": "Catalog",
-        "path": "/catalog"
-      },
-      {
-        "title": "About",
-        "path": "/about"
-      },
-      {
-        "title": "Blog",
-        "path": "/blog"
-      },
-      {
-        "title": "Contact",
-        "path": "/contact"
-      }
-    ]
-  },
-  "singleProduct": {
-    "width": "Width: ",
-    "length": "Length: ",
-    "thickness": "Thickness: ",
-    "wood": "Wood: ",
-    "type": "Type: ",
-    "manufacturer": "Manufacturer: ",
-    "price": "Price: ",
-    "pickup": {
-      "title": "Delivery",
-      "self": "Self-Pickup: Collection of products from the store, address Amsterdam Street 3, Sderot.",
-      "zones": [
-        "Zone 1: Ra'anana, Ashkelon, Kiryat Malachi, Kiryat Gat, Ashdod, and surrounding settlements - ₪250.00",
-        "Zone 2: Rehovot, Givatayim, Ramat Hasharon, Petah Tikva, Rosh HaAyin, Tel Aviv, and surrounding settlements - ₪350.00",
-        "Zone 3: Sderot, Be'er Sheva, Ofakim, Netivot, Ashkelon, and settlements in the surrounding area - ₪300.00",
-        "Zone 4: Jerusalem, Beit Shemesh, and surrounding settlements - ₪500.00",
-        "Zone 5: Hadera, Netanya, Haifa, and settlements in the north - ₪900.00"
-      ],
-      "pss": [
-        "* Orders over ₪5000 - 50% discount.",
-        "** Orders over ₪10,000 - 80% discount."
-      ]
-    }
-  },
-  "aboutUs": {
-    "title": { "firstWord": "Mutag", "secondWord": "Company" },
-    "main": [
-      {
-        "text": "Mutag Haetz, located in the city of Sderot, is a company with over a decade of successful experience. The company has established itself as a leading figure wood products, specializing in the sale of high-quality oak wood items."
-      },
-      {
-        "text": "In the import sector, Mutag Haetz boasts rich experience and proven reliability. As an experienced importer, the company focuses on marketing a wide variety of products, including Oak wood, Oak panels, slabs, Finger-joint and more."
-      },
-      {
-        "text": "Mutag Haetz prides itself on its ability to deliver products of utmost quality. Additionally, the company offers a diverse range of products, including dictums, complementary accessories, and more, ensuring comprehensive and reliable solutions for every project."
-      }
-    ],
-    "features": [
-      {
-        "title": "Available 24/7 for any questions you may have",
-        "feat": "24/7"
-      },
-      {
-        "title": "Years on market",
-        "feat": "11"
-      },
-      {
-        "title": "Type of products",
-        "feat": "15"
-      }
-    ],
-    "team": {
-      "title": "Our Team",
-      "members": [
-        {
-          "name": "Tamara",
-          "position": "SMM"
-        },
-        { "name": "Simon", "position": "Manager" },
-        {
-          "name": "Sam",
-          "position": "Co-owner"
-        }
-      ]
-    }
-  },
-  "formContact": {
-    "sectionTitle": "Contact us",
-    "title": "Contact",
-    "text": "Fill up the form below to contact",
-    "nameLabel": "Your Name",
-    "mailLabel": "Mail",
-    "phoneLabel": "Phone",
-    "toasts": {
-      "form": {
-        "success": "Form submitted successfully",
-        "successMsg1": "Thanks for choosing our premium wood products.",
-        "successMsg2": "We're committed to swift communication—expect us to reach out promptly.  We're here to meet your wood supply needs efficiently.",
-        "successMsg3": "Feel free to contact us via social networks as well. We're here to meet your wood supply needs efficiently."
-      }
-    },
-    "errors": {
-      "name": {
-        "required": "Name is required",
-        "invalid": "Name should contain only alphabets"
-      },
-      "email": {
-        "required": "Email is required",
-        "invalid": "Email is not valid"
-      },
-      "phone": {
-        "required": "Phone number is required",
-        "invalid": "Phone number is not valid"
-      }
-    }
-  },
-  "hero": {
-    "title": "Wood bringing nature to your home – quality and admiration in every board and beam!",
-    "desc": "Explore our catalog and discover how our wooden products can add a unique style and perfection to your projects",
-    "btnCatalog": "Catalog",
-    "btnContactUs": "Contact Us"
-  },
-  "footer": { "contacts": "Contacts and address", "products": "Our Products" },
-  "catalog": {
-    "desc": "Explore the epitome of craftsmanship in our catalog, where every product tells a story of timeless elegance. Our collection showcases the beauty of oak wood in various forms, from exquisite oak stairs that redefine your space to the raw allure of solid oak timber. Dive into the versatility of our offerings, including the environmentally conscious Lami Oak and innovative Oak BIO Board, crafted to inspire your interior design journey. Each product in our wood collection reflects a commitment to quality, ensuring that every piece, whether it's a simple wood panel or a complex timber creation, is a testament to the natural beauty and enduring charm of wood. Welcome to a world where wood becomes art, and every selection, from oak stairs to timber wonders, transforms your space into a masterpiece."
-  },
-  "contactDesc": {
-    "title": "Efficient Oak Delivery Solutions Across Israel: Connecting Cities, Meeting Your Needs!",
-    "towns": "We are delighted to be your suppliers in various cities, including Ashkelon, Ashdod, Be'er Sheva, Kiryat Gat, Netivot, Ofakim, Jerusalem, Tel Aviv, Haifa, Rishon LeZion, Petah Tikva, Netanya, Herzliya, Holon, Eilat, Beer Sheva, Kfar Saba, Rehovot, Hod HaSharon, and Modiin.",
-    "delivery": "Our trucks and couriers are ready to deliver to your location. Don't forget that we are available for communication on social networks,",
-    "linkPhone": "by phone",
-    "askQuestions": "and through a convenient form on the website. Stay connected, and our managers will be sure to answer all your questions."
-  },
-  "pageLinksText": {
-    "catalog": {
-      "fromBlog": "You can familiarize yourself with the details of the products in the",
-      "fromAbout": "You can also find something interesting for yourself by checking out our",
-      "linkName": "CATALOG",
-      "link": "/catalog"
-    }
-  }
+	"buttons": {
+		"view": "View",
+		"contact": "Contact us",
+		"send": "Send",
+		"buy": "BUY",
+		"bag": "Add to bag",
+		"forgotPass": "*Forgot your password?",
+		"createAcc": "Create account",
+		"login": "Login in",
+		"cancel": "Cancel",
+		"order": "Order",
+		"inBag": "In bag",
+		"emptyBagLink": "Search products in catalog",
+		"loaders": {
+			"order": "Creating an order",
+			"addBtn": "Adding product in bag"
+		}
+	},
+	"header": {
+		"navItems": [
+			{
+				"title": "Home",
+				"path": "/"
+			},
+			{
+				"title": "Catalog",
+				"path": "/catalog"
+			},
+			{
+				"title": "About",
+				"path": "/about"
+			},
+			{
+				"title": "Blog",
+				"path": "/blog"
+			},
+			{
+				"title": "Contact",
+				"path": "/contact"
+			}
+		]
+	},
+	"singleProduct": {
+		"description": "Desciption",
+		"productData": [
+			"Width: ",
+			"Length: ",
+			"Thickness: ",
+			"Wood: ",
+			"Type:  ",
+			"Manufacturer:"
+		],
+
+		"price": "Price: ",
+		"pickup": {
+			"title": "Delivery",
+			"self": "Self-Pickup: Collection of products from the store, address Amsterdam Street 3, Sderot.",
+			"zones": [
+				"Zone 1: Ra'anana, Ashkelon, Kiryat Malachi, Kiryat Gat, Ashdod, and surrounding settlements - ₪250.00",
+				"Zone 2: Rehovot, Givatayim, Ramat Hasharon, Petah Tikva, Rosh HaAyin, Tel Aviv, and surrounding settlements - ₪350.00",
+				"Zone 3: Sderot, Be'er Sheva, Ofakim, Netivot, Eshkol, and settlements in the surrounding area - ₪300.00",
+				"Zone 4: Jerusalem, Beit Shemesh, and surrounding settlements - ₪500.00",
+				"Zone 5: Hadera, Netanya, Haifa, and settlements in the north - ₪900.00"
+			],
+			"pss": [
+				"* Orders over ₪5000 - 5% discount.",
+				"** Orders over ₪10,000 - 8% discount."
+			]
+		}
+	},
+	"aboutUs": {
+		"title": { "firstWord": "Mutag", "secondWord": "Company" },
+		"main": [
+			{
+				"text": "Mutag Haetz, located in the city of Sderot, is a company with over a decade of successful experience. The company has established itself as a leading figure wood products, specializing in the sale of high-quality oak wood items."
+			},
+			{
+				"text": "In the import sector, Mutag Haetz boasts rich experience and proven reliability. As an experienced importer, the company focuses on marketing a wide variety of products, including Oak wood, Oak panels, slabs, Finger-joint and more."
+			},
+			{
+				"text": "Mutag Haetz prides itself on its ability to deliver products of utmost quality. Additionally, the company offers a diverse range of products, including dictums, complementary accessories, and more, ensuring comprehensive and reliable solutions for every project."
+			}
+		],
+		"features": [
+			{
+				"title": "Available 24/7 for any questions you may have",
+				"feat": "24/7"
+			},
+			{
+				"title": "Years on market",
+				"feat": "11"
+			},
+			{
+				"title": "Type of products",
+				"feat": "15"
+			}
+		],
+		"team": {
+			"title": "Our Team",
+			"members": [
+				{
+					"name": "Tamara",
+					"position": "SMM"
+				},
+				{ "name": "Simon", "position": "Manager" },
+				{
+					"name": "Sam",
+					"position": "Co-owner"
+				}
+			]
+		}
+	},
+	"formContact": {
+		"signInProvider": "Sign in with",
+		"recovery": "Recover password",
+		"login": "Login",
+		"register": "Create account",
+		"sectionTitle": "Contact us",
+		"title": "Contact",
+		"text": "Fill up the form below to contact",
+		"recoveryText": "*We will send you an email to reset your password.",
+		"nameLabel": "First name",
+		"lastNameLabel": "Last name",
+		"mailLabel": "Mail",
+		"phoneLabel": "Phone",
+		"passwordLabel": "Password",
+		"password1Label": "New password",
+		"password2Label": "Repeat new password",
+		"toasts": {
+			"form": {
+				"success": "Form submitted successfully",
+				"successMsg1": "Thanks for choosing our premium wood products.",
+				"successMsg2": "We're committed to swift communication—expect us to reach out promptly.  We're here to meet your wood supply needs efficiently.",
+				"successMsg3": "Feel free to contact us via social networks as well. We're here to meet your wood supply needs efficiently.",
+				"loginWarning": "Invalid email or password",
+				"registerWarning": "Email already taken",
+				"serverError": "Server error please try again later"
+			}
+		},
+		"errors": {
+			"name": {
+				"required": "Name is required",
+				"invalid": "Name should contain only alphabets"
+			},
+			"lastName": {
+				"required": "Last name is required",
+				"invalid": "Last name should contain only alphabets"
+			},
+			"email": {
+				"required": "Email is required",
+				"invalid": "Email is not valid"
+			},
+			"phone": {
+				"required": "Phone number is required",
+				"invalid": "Phone number is not valid"
+			},
+			"password": {
+				"required": "Password is required",
+				"invalid": "Password must be at least 6 characters long",
+				"not_equal": "Passwords must be equal"
+			}
+		}
+	},
+	"hero": {
+		"title": "Expertly imported wood products, for healthier and happier living",
+		"desc": "High-quality wood products: Oak stairs, finger joint , and vario boards. Crafted with care, bringing the warmth and beauty of wood to Israel. Expertise and quality in every project, capturing the authentic feel of oak wood.",
+		"btnCatalog": "Catalog",
+		"btnContactUs": "Contact Us"
+	},
+	"footer": { "contacts": "Contacts and address", "products": "Our Products" },
+	"catalog": {
+		"desc": "Explore the epitome of craftsmanship in our catalog, where every product tells a story of timeless elegance. Our collection showcases the beauty of oak wood in various forms, from exquisite oak stairs that redefine your space to the raw allure of solid oak timber. Dive into the versatility of our offerings, including the environmentally conscious Lami Oak and innovative Oak BIO Board, crafted to inspire your interior design journey. Each product in our wood collection reflects a commitment to quality, ensuring that every piece, whether it's a simple wood panel or a complex timber creation, is a testament to the natural beauty and enduring charm of wood. Welcome to a world where wood becomes art, and every selection, from oak stairs to timber wonders, transforms your space into a masterpiece."
+	},
+	"contactDesc": {
+		"title": "Efficient Oak Delivery Solutions Across Israel: Connecting Cities, Meeting Your Needs!",
+		"towns": "We are delighted to be your suppliers in various cities, including Ashkelon, Ashdod, Be'er Sheva, Kiryat Gat, Netivot, Ofakim, Jerusalem, Tel Aviv, Haifa, Rishon LeZion, Petah Tikva, Netanya, Herzliya, Holon, Eilat, Beer Sheva, Kfar Saba, Rehovot, Hod HaSharon, and Modiin.",
+		"delivery": "Our trucks and couriers are ready to deliver to your location. Don't forget that we are available for communication on social networks,",
+		"linkPhone": "by phone",
+		"askQuestions": "and through a convenient form on the website. Stay connected, and our managers will be sure to answer all your questions."
+	},
+	"pageLinksText": {
+		"catalog": {
+			"fromBlog": "You can familiarize yourself with the details of the products in the",
+			"fromAbout": "You can also find something interesting for yourself by checking out our",
+			"linkName": "CATALOG",
+			"link": "/catalog"
+		}
+	},
+	"benefits": {
+		"title": "Wood bringing nature to your home – quality and admiration in every board and beam!",
+		"benefitsList": [
+			"High Quality: Mutag Haetz specializes in importing and marketing high-quality and durable wood products, ensuring customers receive items that will serve them well over time.",
+			"Wide Range of Products: The company offers a wide variety of wood products, including oak boards, beechwood, stairs, and more, allowing customers to find the solution that best suits their needs.",
+			"Experience and Expertise: With years of experience in the industry, Mutag Haetz provides a deep understanding of the market and the ability to offer personalized advice and solutions.",
+			" Excellent Customer Service: The company focuses on providing quality and professional customer service, including pre-purchase consultation, support throughout the purchasing process, and after-sales service.",
+			" Stability and Reliability: Equipped with methods for integrating and collecting products, Mutag Haetz ensures stability and reliability in delivering products to customers.",
+			"Direct Pricing from Manufacturers: The ability to directly import products from manufacturers enables Mutag Haetz to offer competitive and fair prices to customers, providing added value to their purchases."
+		]
+	},
+	"profileMobileMenu": {
+		"profile": "Рersonal account",
+		"favorite": "Favorites"
+	},
+	"order": {
+		"title": "Placing an order",
+		"subtitle": "Contact Information",
+		"firstName": "First name",
+		"lastName": "Last name",
+		"mail": "Mail",
+		"phone": "Phone",
+		"accountQuestion": "Already have an account?",
+		"login": "Login in",
+		"register": "Create account",
+		"shippingTitle": "Shipping",
+		"shippingDesc": "*According to the carrier's rates",
+		"select": "Сhoose a city",
+		"self": "Self-pickup",
+		"ownCity": "Enter your city",
+		"orderTitle": "My Order",
+		"vat": "VAT",
+		"subtotal": "Subtotal",
+		"shippingPrice": "Shipping",
+		"total": "Total",
+		"button": "Buy now",
+		"message": "Exact shipping cost to your address will be provided by our consultant."
+	},
+	"orderThankYou": {
+		"title": "Thank you for choosing Mutag Haetz!",
+		"message": "Our manager will contact you within 24 hours.",
+		"button": "Catalog"
+	},
+	"orderReject": {
+		"title": "Something went wrong.",
+		"message": "Your order has not been processed. Please contact us by phone or fill out a form for assistance.",
+		"button": "Contact Us"
+	},
+	"searchField": {
+		"search": "Search...",
+		"clear": "Clear",
+		"noResultText": "Sorry, no results found",
+		"button": "See All Search Results"
+	},
+	"profile": {
+		"sidebar": {
+			"favorites": "Favorites",
+			"contactInformation": "Contact Information",
+			"historyOfOrders": "History of orders",
+			"logout": "Logout"
+		},
+		"favorites": {
+			"title": "Favorites",
+			"btnAdd": "Add To Bag",
+			"empty": "Favorites list is empty"
+		},
+		"contactInformation": {
+			"title": "Contact Information",
+			"userDetailsForm": {
+				"firstName": "First name",
+				"lastName": "Last name",
+				"email": "Email",
+				"phone": "Phone",
+				"btn": "Save",
+				"success": "Personal information updated successfully",
+				"error": "Oops! Unable to update personal information",
+				"validation": {
+					"firstName": {
+						"required": "First name is required",
+						"invalid": "First name should contain only alphabets"
+					},
+					"lastName": {
+						"required": "Last name is required",
+						"invalid": "Last name should contain only alphabets"
+					},
+					"email": {
+						"required": "Email is required",
+						"invalid": "Email is not valid"
+					},
+					"phone": {
+						"required": "Phone number is required",
+						"invalid": "Phone number is not valid"
+					}
+				}
+			}
+		},
+		"historyOfOrders": {
+			"title": "History of orders",
+			"empty": "Order history list is empty"
+		},
+		"ressetPasswordForm": {
+			"title": "Сhange Password",
+			"currentPassword": "Current Password",
+			"newPassword": "New Password",
+			"confirmPassword": "Сonfirm Password",
+			"btn": "Save",
+			"success": "Password updated successfully",
+			"error": "Password update failed. Try again.",
+			"validation": {
+				"password": {
+					"required": "Password is required",
+					"invalid": "Password must be at least 6 characters long",
+					"not_equal": "Passwords must be equal"
+				}
+			}
+		},
+		"addAddressForm": {
+			"title": "Add new address",
+			"region": "Сountry / Region",
+			"city": "Сity",
+			"street": "Street",
+			"app": "Apartment",
+			"index": "Index",
+			"btn": "Save",
+			"success": "Address added successfully",
+			"error": "Oops! Unable to add address. Please try again",
+			"validation": {
+				"required": "Field is required",
+				"invalid": "Enter no more than 20 characters"
+			}
+		},
+		"addressSection": {
+			"title": "My Аddress",
+			"btn": "Delete",
+			"success": "Address successfully removed",
+			"error": "Address deletion error"
+		}
+	},
+	"provider": {
+		"loading": "Loading...",
+		"rederecting": "You've logged in successfully. You will be redirected in a few seconds...",
+		"error": "Something went wrong, please try again"
+	},
+	"catalogPage": { "menu": { "filter": "Filter", "all": "All" } },
+	"notFoundMessage": "Looks like something went wrong look at other product categories or",
+	"sort": [
+		{ "price": "Sort by price" },
+		{ "thickness": "Sort by thickness" },
+		{ "width": "Sort by width" },
+		{ "length": "Sort by length" }
+	],
+	"sortBtn": "Sort",
+	"bag": {
+		"sizes": "Sizes: ",
+		"title": "Bag",
+		"emptyBag": "Nothing in bag",
+		"shipping": "*Price does not include VAT",
+		"subtotal": "Subtotal",
+		"total": "Total",
+		"tooltip": "Go to product page",
+		"limit": "Limit of 100 items can be chosen."
+	},
+	"cta": {
+		"text": "Enter your account to add favorites",
+		"email": "Login with email",
+		"or": "or"
+	},
+	"slider": "View all products in the catalog"
 }
