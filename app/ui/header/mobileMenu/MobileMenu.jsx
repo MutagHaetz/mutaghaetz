@@ -1,56 +1,80 @@
 'use client';
 
 import { useSwipeable } from 'react-swipeable';
+
 import {
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  DrawerOverlay,
+	Box,
+	Button,
+	Drawer,
+	DrawerBody,
+	DrawerContent,
+	Flex,
 } from '@chakra-ui/react';
 
-import { FaAnglesRight } from 'react-icons/fa6';
-import './MobileMenu.css';
+import LocaleSwitcher from '../../localeSwitcher/LocaleSwitcher';
+import { Logout } from '../../logout/Logout';
+import NavBar from '../../navbar/NavBar';
+import CloseIcon from '../../svg/CloseIcon';
 
-const MobileMenu = ({ children, isOpen, onClose }) => {
-  const swipeHandlers = useSwipeable({ onSwipedRight: onClose });
+import ProfileMenu from './profileMenu/ProfileMenu';
 
-  return (
-    <>
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-        <DrawerOverlay />
-        <DrawerContent bg={'#181617'} {...swipeHandlers}>
-          <DrawerBody
-            position={'relative'}
-            display={'flex'}
-            flexDirection={'column'}
-            alignItems={'center'}
-            justifyContent={'space-between'}
-            py={'50px'}
-            px={'32px'}
-          >
-            {children}
-            <Button
-              className={'buttonAnimation'}
-              position={'absolute'}
-              top={'50%'}
-              left={'0'}
-              zIndex={'99999'}
-              bg={'#a28445'}
-              transition={'all 0.3s'}
-              _hover={{ bg: '#81672e' }}
-              color={'white'}
-              borderRadius={'full'}
-              onClick={onClose}
-              {...swipeHandlers}
-            >
-              <FaAnglesRight />
-            </Button>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
-  );
+const MobileMenu = ({ isOpen, onClose, dictionary, hasToken, lang }) => {
+	const swipeHandlers = useSwipeable({ onSwipedUp: onClose });
+
+	return (
+		<>
+			<Drawer isOpen={isOpen} placement="top" onClose={onClose}>
+				<DrawerContent
+					bg={'#181617'}
+					h={'100dvh'}
+					p={'16px'}
+					{...swipeHandlers}
+				>
+					<Button
+						variant={'ghost'}
+						ml={lang === 'en' && 'auto'}
+						mr={lang === 'he' && 'auto'}
+						_hover={{ bg: 'none' }}
+						color={'white'}
+						onClick={onClose}
+					>
+						<CloseIcon />
+					</Button>
+					<DrawerBody
+						position={'relative'}
+						display={'flex'}
+						flexDirection={'column'}
+						justifyContent={'space-between'}
+					>
+						<NavBar
+							flexDir="column"
+							lang={lang}
+							dictionary={dictionary}
+							onClose={onClose}
+							visibleIcon={true}
+						/>
+						<ProfileMenu
+							hasToken={hasToken}
+							lang={lang}
+							onClose={onClose}
+							dictionary={dictionary}
+						/>
+						<Flex alignItems={'center'} justifyContent={'space-between'}>
+							{hasToken && (
+								<Box onClick={onClose}>
+									<Logout
+										lang={lang}
+										logoutDictionary={dictionary.profile.sidebar.logout}
+									/>
+								</Box>
+							)}
+							<LocaleSwitcher />
+						</Flex>
+					</DrawerBody>
+				</DrawerContent>
+			</Drawer>
+		</>
+	);
 };
 
 export default MobileMenu;

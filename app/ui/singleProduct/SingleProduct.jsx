@@ -1,154 +1,302 @@
 'use client';
 
-import { Box, Flex, Heading, Text, useDisclosure } from '@chakra-ui/react';
-import Image from 'next/image';
-import SectionWrapper from '../sectionWrapper/SectionWrapper';
-import Btn from '../button/Btn';
-import ModalWindow from '../modalWindow/ModalWindow';
-import ModalContact from '../modalContact/ModalContact';
-import { TiShoppingCart } from 'react-icons/ti';
+import { useEffect, useState } from 'react';
+
+import {
+	Box,
+	Flex,
+	Grid,
+	Heading,
+	List,
+	ListItem,
+	Text,
+	useDisclosure,
+	useMediaQuery,
+} from '@chakra-ui/react';
+
+import { instance } from '@/app/lib/api/instance';
+import { useLocalBag } from '@/app/lib/hooks/useLocalBag';
+import { flattenAttributes } from '@/app/lib/utils/flattenAttributes';
+
+import Bag from '../bag/Bag';
+import Modal from '../modal/Modal';
+import SubmitButton from '../submitButton/SubmitButton';
+
+import BreadcrumbBar from './Breadcrumb/Breadcrumb';
+import Counter from './Counter/Counter';
+import IsInBag from './isInBag/IsInBag';
+import SingleProductSlider from './singleProductSlider/SingleProductSlider';
+import TotalBagPrice from './TotalBagPrice/TotalBagPrice';
+
+import { AnimatePresence, motion } from 'framer-motion';
+
+export const dynamic = 'force-dynamic';
 
 const SingleProduct = ({
-  contacts,
-  dictionary,
-  product: {
-    imgUrl,
-    title,
-    length,
-    width,
-    descLong,
-    descShort,
-    thickness,
-    wood,
-    type,
-    manufacturer,
-    uid,
-    price,
-  },
+	userId,
+	dictionary,
+	product,
+	bagData,
+	favorites,
+	lang,
 }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+	const {
+		id: goodId,
+		attributes: {
+			uid,
+			img: { data: imgs },
+			title,
+			length,
+			width,
+			descLong,
+			thickness,
+			wood,
+			type,
+			manufacturer,
+			price,
+			unit,
+		},
+	} = product;
 
-  return (
-    <SectionWrapper>
-      <Flex flexWrap={'wrap'} gap={4}>
-        <Box
-          display={'block'}
-          pos={'relative'}
-          w={'400px'}
-          h={'380px'}
-          overflow={'hidden'}
-          borderRadius={'10px'}
-        >
-          <Image
-            src={imgUrl || '/product.png'}
-            alt={title + '' + descShort || 'product image'}
-            fill
-            placeholder="blur"
-            blurDataURL="/blur-product.jpg"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{
-              display: 'block',
-              height: '100%',
-              maxWidth: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </Box>
-        <Flex flexDir={'column'} gap={2}>
-          <Heading
-            as="h2"
-            mb={{ base: 6, lg: 8 }}
-            fontSize={{ base: '2xl', lg: '4xl' }}
-          >
-            {title || ''}
-          </Heading>
-          {length && (
-            <Text as="p" fontSize={'sm'} fontWeight={'600'}>
-              {dictionary.singleProduct.length}
-              <Text as="span" fontWeight={'400'}>
-                {length || ''}
-              </Text>
-            </Text>
-          )}
-          {thickness && (
-            <Text as="p" fontSize={'sm'} fontWeight={'600'}>
-              {dictionary.singleProduct.thickness}
-              <Text as="span" fontWeight={'400'}>
-                {thickness || ''}
-              </Text>
-            </Text>
-          )}
-          {width && (
-            <Text as="p" fontSize={'sm'} fontWeight={'600'}>
-              {dictionary.singleProduct.width}
+	const productDetails = { length, width, thickness, wood, type, manufacturer };
+	const { isOpen, onClose, onOpen } = useDisclosure();
+	const [count, setCount] = useState(1);
+	const [localGoods, setLocalBag] = useLocalBag('localBag', []);
+	const [isMobile] = useMediaQuery('(max-width: 480px)', {
+		ssr: true,
+		fallback: false,
+	});
+	const [favs, setFavs] = useState(favorites);
 
-              <Text as="span" fontWeight={'400'}>
-                {width || ''}
-              </Text>
-            </Text>
-          )}
-          {wood && (
-            <Text as="p" fontSize={'sm'} fontWeight={'600'}>
-              {dictionary.singleProduct.wood}
+	useEffect(() => {
+		localStorage.setItem('favs', JSON.stringify(favs || []));
+	}, [favs]);
 
-              <Text as="span" fontWeight={'400'}>
-                {wood || ''}
-              </Text>
-            </Text>
-          )}
-          {type && (
-            <Text as="p" fontSize={'sm'} fontWeight={'600'}>
-              {dictionary.singleProduct.type}
+	const [totalPrice, setTotalPrice] = useState(null);
+	const [isInBag, setIsInBag] = useState(false);
 
-              <Text as="span" fontWeight={'400'}>
-                {type || ''}
-              </Text>
-            </Text>
-          )}
-          {manufacturer && (
-            <Text as="p" fontSize={'sm'} fontWeight={'600'}>
-              {dictionary.singleProduct.manufacturer}
+	useEffect(() => {
+		const good = localGoods.find(({ good }) => good.data.id === goodId);
+		good ? setCount(good.count) : setCount(1);
+	}, [bagData, goodId, localGoods, userId]);
 
-              <Text as="span" fontWeight={'400'}>
-                {manufacturer || ''}
-              </Text>
-            </Text>
-          )}
-          <Box mt={'auto'}>
-            {price && (
-              <Text as="p" fontSize={'large'} fontWeight={'600'}>
-                {dictionary.singleProduct.price}
-                <Text as="span" fontWeight={'400'}>
-                  {price || ''}
-                </Text>
-              </Text>
-            )}
-            <Box width={'fit-content'}>
-              <Btn onClick={onOpen}>
-                <Text as={'span'} minW={10}>
-                  <TiShoppingCart size={24} />
-                </Text>
+	useEffect(() => {
+		const totalLocalPrice = localGoods.reduce((acc, { count, good }) => {
+			const flattenGood = flattenAttributes(good);
 
-                {dictionary.buttons.buy}
-              </Btn>
-            </Box>
-          </Box>
-        </Flex>
-      </Flex>
-      <Text my={4} as="p">
-        {descLong || ''}
-      </Text>
-      <ModalWindow onClose={onClose} isOpen={isOpen}>
-        <ModalContact
-          dictionary={dictionary}
-          contacts={contacts}
-          onClose={onClose}
-          title={title}
-          uid={uid}
-        />
-      </ModalWindow>
-    </SectionWrapper>
-  );
+			return acc + flattenGood.price * count;
+		}, 0);
+		setTotalPrice(totalLocalPrice);
+	}, [localGoods, bagData, userId, totalPrice]);
+
+	useEffect(() => {
+		const isInLocalBag = localGoods.find(
+			({ good: { data } }) => data.attributes.uid === uid
+		);
+		setIsInBag(isInLocalBag);
+	}, [localGoods, uid]);
+
+	const handleModalBagClose = () => {
+		const flatten = localGoods.map(({ count, good: { data } }) => ({
+			good: data,
+			count,
+		}));
+
+		if (userId) {
+			const url =
+				process.env.NEXT_PUBLIC_STRAPI_API_URL +
+				`/api/bags/${bagData[0].id}?populate=goods`;
+
+			try {
+				instance.put(url, { data: { goods: flatten, bagPrice: totalPrice } });
+			} catch (error) {
+				console.error('SingleProduct_handleModalBagClose', error);
+			}
+		}
+
+		onClose();
+	};
+
+	const addGood = async (count, goodUid) => {
+		const isSame = localGoods.find(
+			({ good: { data } }) => data.attributes.uid === goodUid
+		);
+		let updatedBag = [];
+
+		if (isSame) {
+			updatedBag = localGoods.map(item => {
+				if (item.id === goodUid) {
+					return { ...item, count: item.count + count };
+				}
+
+				return item;
+			});
+			setLocalBag(updatedBag);
+		} else {
+			updatedBag = [...localGoods, { count, good: { data: product } }];
+			setLocalBag(updatedBag);
+		}
+
+		if (userId) {
+			const flatten = updatedBag.map(({ count, good: { data } }) => ({
+				good: data,
+				count,
+			}));
+			const url =
+				process.env.NEXT_PUBLIC_STRAPI_API_URL +
+				`/api/bags/${bagData[0].id}?populate=goods`;
+
+			try {
+				instance.put(url, {
+					data: { goods: flatten, bagPrice: price * count },
+				});
+			} catch (error) {
+				console.error('SingleProduct_addGood', error);
+			}
+		}
+	};
+
+	return (
+		<>
+			<Box
+				key={count}
+				display={'flex'}
+				justifyContent={'space-between'}
+				alignItems={'center'}
+				mb={'30px'}
+			>
+				<BreadcrumbBar
+					favs={favs}
+					setFavs={setFavs}
+					productTitle={title}
+					dictionary={dictionary}
+					product={product}
+					userId={userId}
+				/>
+			</Box>
+			<Grid
+				templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }}
+				gap={'50px'}
+				maxW={'100%'}
+				pos={'relative'}
+			>
+				<SingleProductSlider imgs={Array.isArray(imgs) ? imgs : []} />
+				<Flex flexDir={'column'} gap={'30px'}>
+					<Heading as="h2" fontSize={{ base: '2xl', lg: '4xl' }}>
+						{title || ''}
+					</Heading>
+					{price && (
+						<Text fontSize={'28px'}>
+							{price !== 0 && `${price} ₪`} {unit && `/ ${unit}`}
+						</Text>
+					)}
+					<List>
+						{Object.entries(productDetails).map(
+							([option, value], i) =>
+								value && (
+									<ListItem key={option}>
+										<Text
+											as="p"
+											textTransform="capitalize"
+											fontSize="sm"
+											fontWeight="600"
+										>
+											{dictionary.singleProduct.productData[i]}
+											<Text as="span" ml="4px" fontWeight="400">
+												{value}
+											</Text>
+										</Text>
+									</ListItem>
+								)
+						)}
+					</List>
+
+					<Grid
+						templateColumns={{ base: '1fr ', sm: '1fr 2fr' }}
+						gap={'10px'}
+						mt={{ base: '30px', lg: 'auto' }}
+						alignItems={'center'}
+					>
+						<Box pos={'relative'}>
+							<Counter
+								count={count}
+								setCount={setCount}
+								isInBag={isInBag}
+								isBlock={isMobile}
+								dictionary={dictionary}
+							/>
+							<TotalBagPrice
+								dictionary={dictionary}
+								count={count}
+								totalPrice={price * count}
+								isInBag={isInBag}
+							/>
+						</Box>
+						<>
+							<Box
+								pos={'relative'}
+								display={'flex'}
+								w={'100%'}
+								justifyContent={'center'}
+							>
+								{isInBag ? (
+									<IsInBag
+										isInBag={isInBag}
+										onOpen={onOpen}
+										dictionary={dictionary}
+									/>
+								) : (
+									<AnimatePresence>
+										<Box
+											as={motion.div}
+											w={'100%'}
+											initial={{ opacity: 0, y: -20 }}
+											animate={{ opacity: 1, y: 0 }}
+											exit={{ opacity: 0, y: 0 }}
+											transitionDuration={'0.2s'}
+											transitionTimingFunction={'ease'}
+										>
+											<SubmitButton
+												onClick={() => addGood(count, uid)}
+												type="submit"
+												message={dictionary.buttons.loaders.addBtn}
+											>
+												<Text as={'span'}>{dictionary.buttons.bag}</Text>
+											</SubmitButton>
+										</Box>
+									</AnimatePresence>
+								)}
+							</Box>
+						</>
+					</Grid>
+				</Flex>
+			</Grid>
+			{descLong && (
+				<>
+					<Heading
+						as="h2"
+						mb={{ base: 6, lg: 8 }}
+						mt={'60px'}
+						fontSize={{ base: '2xl', lg: '4xl' }}
+					>
+						{dictionary.singleProduct.description}
+					</Heading>
+					<Text as="p" fontWeight={'400'}>
+						{descLong}
+					</Text>
+				</>
+			)}
+
+			<Modal isOpen={isOpen} onClose={handleModalBagClose} lang={lang}>
+				<Bag
+					bagData={bagData ? bagData[0] : {}}
+					hasToken={!!userId}
+					dictionary={dictionary}
+					onClose={onClose}
+				/>
+			</Modal>
+		</>
+	);
 };
 
 export default SingleProduct;
