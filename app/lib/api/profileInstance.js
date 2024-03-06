@@ -283,6 +283,10 @@ const createOrder = async (
 	try {
 		const userId = cookies().get('userId')?.value;
 
+		const token = cookies().get('jwt')?.value;
+
+		profileInstance.defaults.headers.authorization = `Bearer ${token}`;
+
 		const goodsList = goods.map(good => {
 			const imgUrl = good.good.data.attributes.img.data[0].attributes.url;
 
