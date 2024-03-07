@@ -11,6 +11,7 @@ const Btn = ({
 }) => {
 	return (
 		<Button
+			aria-label={children + ' ' + 'button'}
 			variant={variant}
 			as={as}
 			href={href}

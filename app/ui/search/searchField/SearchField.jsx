@@ -161,6 +161,7 @@ const SearchField = ({ lang, onClose, setQuery, query, dictionary }) => {
 						{dictionary.searchField.noResultText}
 					</Text>
 					<Button
+						aria-label="navigate to catalog"
 						pos={'relative'}
 						variant={'link'}
 						textColor={'#fff'}
@@ -186,6 +187,7 @@ const SearchField = ({ lang, onClose, setQuery, query, dictionary }) => {
 						onClick={onClose}
 					>
 						<Link
+							aria-label="navigate to catalog"
 							href={`/catalog`}
 							style={{
 								display: 'flex',
@@ -203,6 +205,7 @@ const SearchField = ({ lang, onClose, setQuery, query, dictionary }) => {
 
 			{filteredProducts.length > 0 && (
 				<Button
+					aria-label="search in catalog"
 					as={Link}
 					href={`/${lang}/catalog?query=${query}`}
 					bgColor={'#A28445'}

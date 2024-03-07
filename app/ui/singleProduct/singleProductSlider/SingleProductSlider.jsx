@@ -54,6 +54,7 @@ const SingleProductSlider = ({ imgs }) => {
 					{imgs.map(({ id, attributes }) => (
 						<ListItem key={id}>
 							<Button
+								aria-label="chose image"
 								w={{ base: '70px', sm: '80px' }}
 								h={{ base: '70px', sm: '80px' }}
 								p={0}

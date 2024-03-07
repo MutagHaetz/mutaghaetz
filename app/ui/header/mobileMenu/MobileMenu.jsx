@@ -37,6 +37,7 @@ const MobileMenu = ({ isOpen, onClose, dictionary, hasToken, lang }) => {
 						_hover={{ bg: 'none' }}
 						color={'white'}
 						onClick={onClose}
+						aria-label="close mobile menu"
 					>
 						<CloseIcon />
 					</Button>

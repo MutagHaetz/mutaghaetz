@@ -26,6 +26,7 @@ const CallToAuth = ({ setCallbackPath, dictionary, pos = 'absolute' }) => {
 		<Popover>
 			<PopoverTrigger>
 				<Button
+					aria-label="add to favorites"
 					variant={'ghost'}
 					position={pos}
 					top={'0px'}
@@ -81,7 +82,12 @@ const CallToAuth = ({ setCallbackPath, dictionary, pos = 'absolute' }) => {
 									<Box fill={'#ccc'}>
 										<EmailIcon />
 									</Box>
-									<Link href={'/auth/login'}>{dictionary.cta.email}</Link>
+									<Link
+										href={'/auth/login'}
+										aria-label="navigate to login page"
+									>
+										{dictionary.cta.email}
+									</Link>
 								</Flex>
 							</Box>
 							<Text>{dictionary.cta.or}</Text>

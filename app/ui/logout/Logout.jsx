@@ -22,6 +22,7 @@ export const Logout = ({ logoutDictionary, lang }) => {
 			}}
 		>
 			<Button
+				aria-label="logout button"
 				bg="transparent"
 				color="#fff"
 				_hover={{ color: '#a98841' }}

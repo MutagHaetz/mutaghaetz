@@ -44,6 +44,7 @@ const Modal = ({ isOpen, onClose, children, lang }) => {
 				>
 					<Box>
 						<Button
+							aria-label="close modal button"
 							variant={'unstyled'}
 							display={'flex'}
 							pos={'absolute'}

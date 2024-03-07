@@ -74,6 +74,7 @@ const CategoryMenu = ({
 									<Flex as="ul" flexDir={'column'} gap={'4px'}>
 										<Box as="li" key={'All'} width={'100%'}>
 											<Button
+												aria-label="show all products"
 												variant={'ghost'}
 												fontSize={'16px'}
 												fontWeight={'500'}
@@ -96,6 +97,7 @@ const CategoryMenu = ({
 										{subCategories.map(subCategory => (
 											<Box as="li" key={subCategory.uid} width={'100%'}>
 												<Button
+													aria-label={`show ${subCategory.title}`}
 													variant={'ghost'}
 													fontSize={'16px'}
 													fontWeight={'500'}

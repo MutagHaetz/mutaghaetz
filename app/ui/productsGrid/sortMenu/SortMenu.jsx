@@ -46,6 +46,7 @@ const SortMenu = ({
 				my={'12px'}
 			>
 				<Button
+					aria-label="open sorting menu"
 					variant={'ghost'}
 					color={'white'}
 					fontSize={'16px'}
@@ -95,6 +96,7 @@ const SortMenu = ({
 							}}
 						>
 							<CloseButton
+								aria-label="close button"
 								ml={lang === 'en' && 'auto'}
 								mr={lang === 'he' && 'auto'}
 								onClick={() => {
@@ -111,6 +113,7 @@ const SortMenu = ({
 								{sortValues.map(el => (
 									<Box as="li" key={el}>
 										<Button
+											aria-label={`sort by ${el + ' ' + sortOrder}`}
 											variant={'ghost'}
 											color={'white'}
 											fontSize={'16px'}
@@ -149,6 +152,7 @@ const SortMenu = ({
 				{sortValues.map(el => (
 					<Box as="li" key={el}>
 						<Button
+							aria-label={`sort by ${el} + ' ' + ${sortOrder}`}
 							variant={'ghost'}
 							color={'white'}
 							fontSize={'16px'}

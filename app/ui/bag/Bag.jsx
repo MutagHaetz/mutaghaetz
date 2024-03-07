@@ -162,6 +162,7 @@ const Bag = ({ bagData, hasToken, onClose, dictionary }) => {
 							borderRadius={'0px'}
 							_hover={{ bgColor: '#81672e' }}
 							message={dictionary.buttons.loaders.order}
+							aria-label="navigate to order"
 						>
 							{dictionary.buttons.order} {totalPrice} ₪
 						</Button>
@@ -180,6 +181,7 @@ const Bag = ({ bagData, hasToken, onClose, dictionary }) => {
 						{dictionary.bag.emptyBag}
 					</Text>
 					<Button
+						aria-label="navigate to catalog"
 						pos={'relative'}
 						variant={'link'}
 						textColor={'#fff'}

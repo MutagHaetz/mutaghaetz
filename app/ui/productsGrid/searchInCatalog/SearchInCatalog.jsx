@@ -47,6 +47,7 @@ const SearchInCatalog = ({ dictionary, lang, setQuery }) => {
 					<>
 						<InputRightElement right={'30px'}>
 							<Button
+								aria-label="clear search button"
 								variant={'ghost'}
 								color={'#ccc'}
 								fontSize={'15px'}
@@ -69,6 +70,7 @@ const SearchInCatalog = ({ dictionary, lang, setQuery }) => {
 							_active={{ bg: 'transpaernt' }}
 							_hover={{ bg: 'transpaernt' }}
 							onClick={() => clearSearch()}
+							aria-label="clear search button"
 						>
 							{!isSearch ? '' : dictionary.searchField.clear}
 						</Button>

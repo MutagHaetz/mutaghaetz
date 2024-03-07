@@ -37,6 +37,7 @@ const Counter = ({ count, setCount, isInBag, dictionary, isBlock }) => {
 				px={'24px'}
 			>
 				<Button
+					aria-label="decrement count of products in bag"
 					variant={'link'}
 					w={'24px'}
 					minW={0}
@@ -88,6 +89,7 @@ const Counter = ({ count, setCount, isInBag, dictionary, isBlock }) => {
 				/>
 
 				<Button
+					aria-label="increment count of products in bag"
 					variant={'link'}
 					w={'32px'}
 					minW={0}

@@ -157,6 +157,7 @@ const HeaderWrapper = ({
 					/>
 
 					<Button
+						aria-label="open mobile menu"
 						display={{ base: 'block', lg: 'none' }}
 						variant={'ghost'}
 						color={'#a98841'}

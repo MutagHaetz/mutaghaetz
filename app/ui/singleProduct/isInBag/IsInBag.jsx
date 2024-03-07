@@ -15,6 +15,7 @@ const IsInBag = ({ isInBag, onOpen, dictionary }) => {
 			<AnimatePresence>
 				{isInBag && (
 					<Button
+						aria-label="added to bag"
 						key="count"
 						as={motion.button}
 						variant={'ghost'}

@@ -22,6 +22,7 @@ const SubmitButton = ({
 	return (
 		<>
 			<Button
+				aria-label={children + ' ' + 'button'}
 				pos={'relative'}
 				onClick={onClick}
 				variant={variant}

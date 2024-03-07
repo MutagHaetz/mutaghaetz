@@ -39,6 +39,7 @@ const ProviderButton = ({
 	return (
 		<Center style={style}>
 			<Button
+				aria-label={`login with ${variant}`}
 				as={Link}
 				href={`${backendUrl}/api/connect/${variant}`}
 				onClick={() => {

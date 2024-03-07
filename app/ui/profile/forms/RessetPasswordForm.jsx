@@ -80,6 +80,7 @@ export const RessetPasswordForm = ({ lang, ressetPassDictionary }) => {
 					{title}
 				</Heading>
 				<Button
+					aria-label="show password"
 					variant={'unstyled'}
 					type="button"
 					width={'20px'}

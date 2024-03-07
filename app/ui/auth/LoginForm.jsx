@@ -155,6 +155,7 @@ const LoginForm = ({ dictionary, lang }) => {
 				</FormErrorMessage>
 			</FormControl>
 			<Link
+				aria-label="recovery password"
 				href={`/${lang}/auth/recovery`}
 				fontSize={'14px'}
 				fontWeight={500}

@@ -14,7 +14,7 @@ function NotFound() {
 				</Heading>
 				<Text>Looks like something went wrong</Text>
 
-				<Link href="/">
+				<Link href="/" aria-label="Navigate home page">
 					<Btn>Let&apos;s try again</Btn>
 				</Link>
 			</Center>
