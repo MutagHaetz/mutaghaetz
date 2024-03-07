@@ -44,6 +44,7 @@ export const DeleteBtn = ({ id, dictionary }) => {
 			/>
 
 			<Button
+				aria-label="delete button"
 				type="submit"
 				bg="transparent"
 				color="#fff"

@@ -121,6 +121,7 @@ const MobileFilterMenu = ({
 							<Flex as="ul" flexDir={'column'} gap={'4px'}>
 								<Box as={'li'} key={'All'}>
 									<Button
+										aria-label="show all products"
 										variant={'ghost'}
 										display={'flex'}
 										fontSize={'16px'}
@@ -162,7 +163,7 @@ const MobileFilterMenu = ({
 													}}
 												>
 													{subCategories.length > 0 && (
-														<AccordionButton>
+														<AccordionButton aria-label="show title">
 															{title}
 															<AccordionIcon />
 														</AccordionButton>
@@ -178,6 +179,7 @@ const MobileFilterMenu = ({
 													>
 														<Box as={'li'} key={'all'}>
 															<Button
+																aria-label="show all"
 																variant={'ghost'}
 																display={'flex'}
 																justifyContent={'flex-start'}
@@ -207,6 +209,7 @@ const MobileFilterMenu = ({
 														{subCategories.map(subCategory => (
 															<Box as="li" key={subCategory.uid} width={'100%'}>
 																<Button
+																	aria-label={`show ${subCategory.title}`}
 																	variant={'ghost'}
 																	fontSize={'16px'}
 																	fontWeight={'500'}

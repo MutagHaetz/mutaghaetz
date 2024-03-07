@@ -111,6 +111,7 @@ export const FavoritesContent = ({ dictionary, lang, isAuth }) => {
 				>
 					<Text textAlign={'center'}>{dictionary.profile.favorites.empty}</Text>
 					<Button
+						aria-label="navigate to catalog"
 						pos={'relative'}
 						variant={'link'}
 						textColor={'#fff'}
@@ -136,6 +137,7 @@ export const FavoritesContent = ({ dictionary, lang, isAuth }) => {
 					>
 						<Link
 							href={`/${lang}/catalog`}
+							aria-label="navigate to catalog"
 							style={{
 								display: 'flex',
 								width: '100%',

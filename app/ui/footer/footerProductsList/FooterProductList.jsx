@@ -104,6 +104,7 @@ const FooterProductsList = ({ products, lang }) => {
 											{subCategories.length > 0 && (
 												<PopoverTrigger>
 													<Button
+														aria-label="show sub-categories list"
 														variant={'ghost'}
 														_hover={{
 															bg: 'none',

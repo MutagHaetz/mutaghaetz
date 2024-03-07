@@ -25,6 +25,7 @@ const SsrOrderHistory = async ({ lang, dictionary }) => {
 		>
 			<Text textAlign={'center'}>{dictionary.profile.favorites.empty}</Text>
 			<Button
+				aria-label="navigate to catalog"
 				pos={'relative'}
 				variant={'link'}
 				textColor={'#fff'}
@@ -50,6 +51,7 @@ const SsrOrderHistory = async ({ lang, dictionary }) => {
 			>
 				<Link
 					href={`/${lang}/catalog`}
+					aria-label="navigate to catalog"
 					style={{
 						display: 'flex',
 						width: '100%',

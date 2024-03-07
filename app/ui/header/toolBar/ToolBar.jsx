@@ -200,6 +200,7 @@ const ToolBar = ({
 								justifyContent={'center'}
 							>
 								<Button
+									aria-label={`open ${id}`}
 									variant={'ghost'}
 									_hover={{ bg: 'none' }}
 									onClick={() => handleClick(id)}

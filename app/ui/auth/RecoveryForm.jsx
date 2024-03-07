@@ -95,6 +95,7 @@ const RecoveryForm = ({ dictionary, lang }) => {
 			)}
 			<Center mt={'20px'}>
 				<Button
+					aria-label="cancel button"
 					onClick={() => router.back()}
 					variant={'unstyled'}
 					borderBottom={'1px solid rgba(255, 255, 255, 1)'}

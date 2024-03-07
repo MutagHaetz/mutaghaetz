@@ -162,6 +162,7 @@ const ProductCard = ({
 				<Flex justifyContent={'center'}>
 					{
 						<Button
+							aria-label="delete product from bag"
 							onClick={() => removeItemFromLocal(uid)}
 							variant="unstyled"
 							bgColor="transparent"

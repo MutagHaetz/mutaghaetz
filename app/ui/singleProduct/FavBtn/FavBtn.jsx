@@ -10,6 +10,7 @@ const FavBtn = ({ isFavorite, ...props }) => {
 
 	return (
 		<Button
+			aria-label={isFavorite ? 'remove from favorites' : 'add to favorites'}
 			type="submit"
 			variant={'unstyled'}
 			display={'flex'}

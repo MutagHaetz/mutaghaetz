@@ -64,6 +64,7 @@ const About = ({ dictionary, contacts, lang }) => {
 						</TextLink>
 					</Text>
 					<Button
+						aria-label="contact button"
 						bgColor={'#a28445'}
 						color={'#fff'}
 						_hover={{ bgColor: '#81672e' }}

@@ -42,6 +42,7 @@ const SwiperNavigation = () => {
 				onClick={() => {
 					swiper.slideNext();
 				}}
+				aria-label="next slide button"
 			>
 				<ArrowLeftIcon />
 			</Button>
@@ -55,6 +56,7 @@ const SwiperNavigation = () => {
 				onClick={() => {
 					swiper.slideNext();
 				}}
+				aria-label="previous slide button"
 			>
 				<ArrowRightIcon />
 			</Button>
@@ -124,6 +126,7 @@ const BlogSlider = ({ posts, lang }) => {
 											px="10px"
 											w={'80px'}
 											h={'60px'}
+											aria-label="open video"
 										>
 											<YoutubeIcon />
 										</Button>

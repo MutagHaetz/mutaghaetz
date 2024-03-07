@@ -39,6 +39,7 @@ const PaginationDisplay = ({ total, setTotal, page, setPage }) => {
 		return (
 			<Flex dir={'ltr'} justifyContent="center">
 				<Button
+					aria-label="previous page"
 					key={'next'}
 					variant={'ghost'}
 					visibility={hasPrev ? 'visible' : 'hidden'}
@@ -57,6 +58,7 @@ const PaginationDisplay = ({ total, setTotal, page, setPage }) => {
 				</Button>
 				{buttonsArr.map(pageNumber => (
 					<Button
+						aria-label={`page ${pageNumber}`}
 						key={pageNumber}
 						variant={'ghost'}
 						fontSize={'14px'}
@@ -74,6 +76,7 @@ const PaginationDisplay = ({ total, setTotal, page, setPage }) => {
 					</Button>
 				))}
 				<Button
+					aria-label="previous page"
 					key={'prev'}
 					variant={'ghost'}
 					transition={'all 0.1s'}
