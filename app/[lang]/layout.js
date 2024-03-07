@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
 
@@ -83,12 +84,16 @@ export default async function RootLayout({ children, params: { lang } }) {
 				fontSize={18}
 			>
 				<Providers>
-					<Header lang={lang} dictionary={dictionary} contacts={contacts} />
+					<Suspense fallback={null}>
+						<Header lang={lang} dictionary={dictionary} contacts={contacts} />
+					</Suspense>
 					<AnimatedMain>
 						{children}
 						<SpeedInsights />
 					</AnimatedMain>
-					<Footer lang={lang} dictionary={dictionary} contacts={contacts} />
+					<Suspense fallback={null}>
+						<Footer lang={lang} dictionary={dictionary} contacts={contacts} />
+					</Suspense>
 				</Providers>
 			</Box>
 		</html>
