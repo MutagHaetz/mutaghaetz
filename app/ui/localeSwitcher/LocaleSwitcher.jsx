@@ -43,6 +43,7 @@ export const LocaleSwitcher = () => {
 			{i18n.locales.map(locale => (
 				<ListItem position="relative" key={locale}>
 					<Link
+						aria-label="change locale"
 						href={
 							searchParams.has('?')
 								? `${redirectedPathName(locale)}?${searchParams}`

@@ -41,6 +41,7 @@ const RegisterPage = async ({ params: { lang } }) => {
 					</Flex>
 					<Center mt={'20px'}>
 						<ChackraLink
+							aria-label="navigate to login page"
 							as={Link}
 							href={`/${lang}/auth/login`}
 							fontSize={'14px'}

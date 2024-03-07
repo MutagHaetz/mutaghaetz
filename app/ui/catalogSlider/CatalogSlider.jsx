@@ -22,7 +22,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const CatalogSlider = ({ products: { data }, lang, heading, dictionary }) => {
-	const [isModileScreen] = useMediaQuery('(max-width: 1024px)');
+	const [isMobileScreen] = useMediaQuery('(max-width: 1024px)');
 
 	const callbackpath = () =>
 		localStorage.setItem('callbackPath', JSON.stringify('/catalog'));
@@ -77,6 +77,7 @@ const CatalogSlider = ({ products: { data }, lang, heading, dictionary }) => {
 						<SwiperSlide>
 							<li>
 								<Link
+									aria-label="navigate to catalog"
 									href={`/${lang}/catalog`}
 									onClick={() => {
 										localStorage.setItem(
@@ -89,7 +90,7 @@ const CatalogSlider = ({ products: { data }, lang, heading, dictionary }) => {
 										borderRadius={'2px'}
 										className="product_card"
 										filter={
-											isModileScreen ? 'brightness(100%)' : 'brightness(80%)'
+											isMobileScreen ? 'brightness(100%)' : 'brightness(80%)'
 										}
 										position="relative"
 										z-index="2"

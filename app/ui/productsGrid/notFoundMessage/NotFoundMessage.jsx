@@ -29,7 +29,7 @@ const NotFoundMessage = ({ lang, dictionary }) => {
 			<Link href={`${redirectedPathName(lang)}`}>
 				<Btn>Let&apos;s try again</Btn>
 			</Link>
-			<Link href={`/${lang}`}>
+			<Link href={`/${lang}`} aria-label="navigate to home page">
 				<Btn>Home</Btn>
 			</Link>
 		</Center>

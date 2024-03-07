@@ -137,7 +137,7 @@ export const FavoritesContent = ({ dictionary, lang, isAuth }) => {
 					>
 						<Link
 							href={`/${lang}/catalog`}
-							aria-label="navigate to catalog"
+							aria-label="navigate to catalog page"
 							style={{
 								display: 'flex',
 								width: '100%',

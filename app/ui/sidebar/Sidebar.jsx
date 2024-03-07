@@ -37,6 +37,7 @@ export const Sidebar = ({ lang, sidebarDictionary }) => {
 						justifyContent: 'space-between',
 						alignContent: 'center',
 					}}
+					aria-label="navigate to favorites"
 				>
 					{favorites}
 				</Link>
@@ -50,6 +51,7 @@ export const Sidebar = ({ lang, sidebarDictionary }) => {
 			>
 				<Link
 					href={profileRoutes.contactInfo}
+					aria-label="navigate to contact info"
 					style={{
 						display: 'flex',
 						justifyContent: 'space-between',
@@ -69,6 +71,7 @@ export const Sidebar = ({ lang, sidebarDictionary }) => {
 				_active={{ backgroundColor: 'transparent' }}
 			>
 				<Link
+					aria-label="navigate to history of orders"
 					href={profileRoutes.historyOfOrders}
 					style={{
 						display: 'flex',

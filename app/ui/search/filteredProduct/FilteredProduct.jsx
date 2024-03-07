@@ -10,6 +10,9 @@ const FilteredProduct = ({ product, lang }) => {
 			<Flex as="li" borderBottom={'1px solid #A28445'} pb={'25px'}>
 				<Link
 					href={`/${lang}/catalog/${product.uid}`}
+					aria-label={`navigate to product ${
+						product?.title || ''
+					} details page`}
 					display={'flex'}
 					gap={'30px'}
 					onClick={() => {

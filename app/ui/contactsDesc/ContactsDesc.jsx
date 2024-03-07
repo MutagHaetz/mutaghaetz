@@ -20,7 +20,10 @@ const ContactsDesc = ({ dictionary, contacts, lang }) => {
 			</Box>
 			<Text>
 				{dictionary.pageLinksText.catalog.fromBlog}
-				<TextLink href={`/${lang}/${dictionary.pageLinksText.catalog.link}`}>
+				<TextLink
+					href={`/${lang}/${dictionary.pageLinksText.catalog.link}`}
+					aria-label={`navigate to ${dictionary.pageLinksText.catalog.linkName}`}
+				>
 					{dictionary.pageLinksText.catalog.linkName}
 				</TextLink>
 			</Text>

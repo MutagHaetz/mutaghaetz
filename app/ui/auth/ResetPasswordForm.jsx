@@ -67,6 +67,7 @@ const ResetPasswordForm = ({ dictionary, lang, code }) => {
 				<InputGroup>
 					{lang === 'en' ? (
 						<InputRightElement
+							tabIndex={-1}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown1(!isShown1)}
@@ -84,6 +85,7 @@ const ResetPasswordForm = ({ dictionary, lang, code }) => {
 						</InputRightElement>
 					) : (
 						<InputLeftElement
+							tabIndex={-1}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown1(!isShown1)}
@@ -126,6 +128,7 @@ const ResetPasswordForm = ({ dictionary, lang, code }) => {
 				<InputGroup>
 					{lang === 'en' ? (
 						<InputRightElement
+							tabIndex={-2}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown2(!isShown2)}
@@ -143,6 +146,7 @@ const ResetPasswordForm = ({ dictionary, lang, code }) => {
 						</InputRightElement>
 					) : (
 						<InputLeftElement
+							tabIndex={-2}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown2(!isShown2)}

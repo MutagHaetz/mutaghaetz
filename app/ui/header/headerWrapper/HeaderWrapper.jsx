@@ -114,7 +114,7 @@ const HeaderWrapper = ({
 			</Flex>
 
 			<Flex justify={'space-between'} alignItems={'center'}>
-				<Link href={'/' + lang}>
+				<Link href={'/' + lang} aria-label="navigate to home page">
 					<Box position="relative" w={'180px'} height={'60px'}>
 						<Image
 							src={'/img/logo.png'}

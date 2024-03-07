@@ -15,7 +15,8 @@
 		"loaders": {
 			"order": "Creating an order",
 			"addBtn": "Adding product in bag"
-		}
+		},
+		"tryAgain": "Let&apos;s try again"
 	},
 	"header": {
 		"navItems": [
@@ -331,7 +332,10 @@
 		"error": "Something went wrong, please try again"
 	},
 	"catalogPage": { "menu": { "filter": "Filter", "all": "All" } },
-	"notFoundMessage": "Looks like something went wrong look at other product categories or",
+	"notFoundMessage": [
+		"😔 OPPS!",
+		"Looks like something went wrong look at other product categories or"
+	],
 	"sort": [
 		{ "price": "Sort by price" },
 		{ "thickness": "Sort by thickness" },

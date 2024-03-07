@@ -187,7 +187,7 @@ const SearchField = ({ lang, onClose, setQuery, query, dictionary }) => {
 						onClick={onClose}
 					>
 						<Link
-							aria-label="navigate to catalog"
+							aria-label="navigate to catalog page"
 							href={`/catalog`}
 							style={{
 								display: 'flex',
