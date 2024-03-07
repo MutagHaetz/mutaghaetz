@@ -51,7 +51,7 @@ const SsrOrderHistory = async ({ lang, dictionary }) => {
 			>
 				<Link
 					href={`/${lang}/catalog`}
-					aria-label="navigate to catalog"
+					aria-label="navigate to catalog page"
 					style={{
 						display: 'flex',
 						width: '100%',

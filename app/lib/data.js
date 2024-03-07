@@ -25,16 +25,19 @@ export const iconData = contacts => [
 		icon: <LocationIcon />,
 		text: contacts.address,
 		href: contacts.addressUrl,
+		aria: 'navigate to address on map',
 	},
 	{
 		icon: <PhoneIcon />,
 		text: `+${contacts.phone}`,
 		href: `tel:+${contacts.phone}`,
+		aria: 'make phone call',
 	},
 	{
 		icon: <EmailIcon />,
 		text: contacts.email,
 		href: `mailto:${contacts.email}`,
+		aria: 'send email',
 	},
 ];
 

@@ -42,10 +42,18 @@ const Hero = async ({ dictionary, lang }) => {
 					flexDir={{ base: 'column', sm: 'row' }}
 					gap={{ base: '10px', sm: '20px' }}
 				>
-					<Btn as={Link} href={`/${lang}/catalog`}>
+					<Btn
+						as={Link}
+						href={`/${lang}/catalog`}
+						aria-label="navigate to products catalog page"
+					>
 						{dictionary.hero.btnCatalog}
 					</Btn>
-					<Btn as={Link} href={`/${lang}/contact`}>
+					<Btn
+						as={Link}
+						href={`/${lang}/contact`}
+						aria-label="navigate to contact page"
+					>
 						{dictionary.hero.btnContactUs}
 					</Btn>
 				</Flex>

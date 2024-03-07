@@ -103,6 +103,7 @@ const LoginForm = ({ dictionary, lang }) => {
 				<InputGroup>
 					{lang === 'en' ? (
 						<InputRightElement
+							tabIndex={-2}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown(!isShown)}
@@ -120,6 +121,7 @@ const LoginForm = ({ dictionary, lang }) => {
 						</InputRightElement>
 					) : (
 						<InputLeftElement
+							tabIndex={-2}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown(!isShown)}
@@ -155,6 +157,7 @@ const LoginForm = ({ dictionary, lang }) => {
 				</FormErrorMessage>
 			</FormControl>
 			<Link
+				tabIndex={-3}
 				aria-label="recovery password"
 				href={`/${lang}/auth/recovery`}
 				fontSize={'14px'}
@@ -164,7 +167,7 @@ const LoginForm = ({ dictionary, lang }) => {
 			>
 				{dictionary.buttons.forgotPass}
 			</Link>
-			<SubmitButton>{dictionary.buttons.send}</SubmitButton>
+			<SubmitButton>{dictionary.formContact.login}</SubmitButton>
 		</Box>
 	);
 };

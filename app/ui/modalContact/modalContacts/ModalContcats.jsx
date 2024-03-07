@@ -42,6 +42,7 @@ const ModalContacts = ({ contacts, dictionary, lang }) => {
 							transform: 'translateX(3px)',
 						}}
 						fill="#a28445"
+						aria-label="make a phone call"
 					>
 						<PhoneIcon />
 						<Text
@@ -69,6 +70,7 @@ const ModalContacts = ({ contacts, dictionary, lang }) => {
 							transform: 'translateX(3px)',
 						}}
 						fill="#a28445"
+						aria-label="send email"
 					>
 						<EmailIcon />
 						<Text>{contacts.email}</Text>
@@ -92,6 +94,7 @@ const ModalContacts = ({ contacts, dictionary, lang }) => {
 						}}
 						style={{ whiteSpace: 'break-spaces' }}
 						fill="#a28445"
+						aria-label="open address on map"
 					>
 						<LocationIcon />
 						<Text>{contacts.address}</Text>

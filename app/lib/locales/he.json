@@ -15,7 +15,8 @@
 		"loaders": {
 			"order": "יצירת הזמנה",
 			"addBtn": "הוספת מוצר בשקית"
-		}
+		},
+		"tryAgain": "נסה שוב"
 	},
 	"header": {
 		"navItems": [
@@ -323,7 +324,7 @@
 		"button": "ראה את כל תוצאות החיפוש"
 	},
 	"catalogPage": { "menu": { "filter": "סנן", "all": "הכל" } },
-	"notFoundMessage": "נראה שמשהו השתבש. הצג קטגוריות מוצרים אחרות",
+	"notFoundMessage": ["😔אופס!", "נראה שמשהו השתבש. הצג קטגוריות מוצרים אחרות"],
 	"sort": [
 		{ "price": "מיון לפי מחיר" },
 		{ "thickness": "מיון לפי עובי" },

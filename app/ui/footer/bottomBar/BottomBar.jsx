@@ -11,7 +11,12 @@ const BottomBar = () => {
 			_hover={{ color: '#a98841' }}
 			mt={'12px'}
 		>
-			<Link href={'mailto:7ty.dev@gmail.com'}>Created by SevenTy</Link>
+			<Link
+				aria-label="Contact with top developers team ever - Seventy.dev"
+				href={'mailto:7ty.dev@gmail.com'}
+			>
+				Created by SevenTy
+			</Link>
 		</Box>
 	);
 };

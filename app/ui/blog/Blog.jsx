@@ -12,7 +12,10 @@ const Blog = async ({ lang, dictionary, posts }) => {
 			<BlogSlider posts={posts} lang={lang} />
 			<Text mt={'32px'}>
 				{dictionary.pageLinksText.catalog.fromBlog}
-				<TextLink href={`/${lang}/${dictionary.pageLinksText.catalog.link}`}>
+				<TextLink
+					aria-label={`navigate to ${dictionary.pageLinksText.catalog.linkName}`}
+					href={`/${lang}/${dictionary.pageLinksText.catalog.link}`}
+				>
 					{dictionary.pageLinksText.catalog.linkName}
 				</TextLink>
 			</Text>

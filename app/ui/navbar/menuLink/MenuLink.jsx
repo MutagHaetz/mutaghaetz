@@ -23,6 +23,7 @@ const MenuLink = ({ item, lang, onClose, visibleIcon = false }) => {
 		>
 			<Link
 				href={'/' + lang + item.path}
+				aria-label={`navigate to ${item.path}`}
 				display={'flex'}
 				align={'center'}
 				gap={1}

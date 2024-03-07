@@ -95,7 +95,16 @@ const ProductCard = ({
 				bottom={'5px'}
 				bgColor={'transparent'}
 			>
-				<Link href={`/${lang}/catalog/${uid}`} onClick={onClose}>
+				<Link
+					href={`/${lang}/catalog/${uid}`}
+					onClick={onClose}
+					aria-label={`navigate to product ${
+						(locale === 'he' && lang === 'he') ||
+						(locale === 'en' && lang === 'en')
+							? title
+							: localizations[0]?.title
+					} details`}
+				>
 					<Flex
 						alignItems={'center'}
 						gap={{ base: '10px', lg: '30px' }}

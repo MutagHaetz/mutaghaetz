@@ -71,17 +71,24 @@ const ToolBar = ({
 	const mapIcon = {
 		SEARCH_ICON: <Search />,
 		PROFILE_ICON: hasToken ? (
-			<Link href={`/${lang}/profile`}>
+			<Link
+				href={`/${lang}/profile`}
+				aria-label="navigate to user profile page"
+			>
 				<AuthProfileIcon />
 			</Link>
 		) : (
-			<Link href={`/${lang}/profile`}>
+			<Link
+				href={`/${lang}/profile`}
+				aria-label="navigate to user profile page"
+			>
 				<ProfileNavIcon />
 			</Link>
 		),
 		FAVORITE_ICON: hasToken && (
 			<Link
 				href={`/${lang}/profile/favorites`}
+				aria-label="navigate to user profile favorites"
 				style={{ position: 'relative' }}
 			>
 				<FavoriteNavIcon />

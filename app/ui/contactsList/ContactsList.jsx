@@ -3,9 +3,10 @@ import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import { iconData } from '@/app/lib/data';
 
 const ContactsList = ({ contacts, lang, inFooter = false }) => {
-	const renderIconLink = ({ icon, text, href }) => (
+	const renderIconLink = ({ icon, text, href, aria }) => (
 		<Box as="li" key={href}>
 			<Link
+				aria-label={aria}
 				key={text}
 				href={href || '/'}
 				rel="noopener noreferrer nofollow"

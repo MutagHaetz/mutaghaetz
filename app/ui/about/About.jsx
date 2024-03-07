@@ -58,6 +58,7 @@ const About = ({ dictionary, contacts, lang }) => {
 					<Text mt={'32px'}>
 						{dictionary.pageLinksText.catalog.fromAbout}
 						<TextLink
+							aria-label={`navigate to ${dictionary.pageLinksText.catalog.linkName}`}
 							href={`/${lang}/${dictionary.pageLinksText.catalog.link}`}
 						>
 							{dictionary.pageLinksText.catalog.linkName}

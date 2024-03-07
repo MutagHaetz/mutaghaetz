@@ -148,6 +148,7 @@ const RegisterForm = ({ dictionary, lang }) => {
 				<InputGroup>
 					{lang === 'en' ? (
 						<InputRightElement
+							tabIndex={-1}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown(!isShown)}
@@ -165,6 +166,7 @@ const RegisterForm = ({ dictionary, lang }) => {
 						</InputRightElement>
 					) : (
 						<InputLeftElement
+							tabIndex={-1}
 							as={'button'}
 							type="button"
 							onClick={() => setIsShown(!isShown)}

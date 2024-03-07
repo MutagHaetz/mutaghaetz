@@ -6,7 +6,12 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 
 export const OrderHistoryItem = ({ lang, title, descShort, imgurl, uid }) => {
 	return (
-		<Box display="flex" as={Link} href={`/${lang}/catalog/${uid}`}>
+		<Box
+			display="flex"
+			as={Link}
+			href={`/${lang}/catalog/${uid}`}
+			aria-label={`navigate to product ${title || ''} details page`}
+		>
 			<Flex
 				flexDir={{ base: 'column', lg: 'row' }}
 				justifyContent="space-between"

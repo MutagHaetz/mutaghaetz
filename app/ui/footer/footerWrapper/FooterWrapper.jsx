@@ -27,7 +27,7 @@ const FooterWrapper = ({ lang, dictionary, contacts, products }) => {
 				mb={{ base: '46px', lg: '0' }}
 			>
 				<Flex flexDirection="column" gap={'38px'}>
-					<Link href={'/' + lang}>
+					<Link href={'/' + lang} aria-label="navigate to home page">
 						<Box position="relative" w={'300px'} height={'100px'}>
 							<Image
 								src={'/img/logo.png'}

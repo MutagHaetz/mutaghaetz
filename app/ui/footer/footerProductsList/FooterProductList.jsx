@@ -88,9 +88,13 @@ const FooterProductsList = ({ products, lang }) => {
 							stroke: '#a98841',
 						}}
 					>
-						<Link href={`/${lang}/catalog?category=${id}`}>{title}</Link>
+						<Link
+							href={`/${lang}/catalog?category=${id}`}
+							aria-label={`navigate to ${title} category`}
+						>
+							{title}
+						</Link>
 						<Box as="ul">
-							{' '}
 							<Box as="li" key={subCategories}>
 								<Popover
 									closeOnBlur={true}
@@ -138,6 +142,7 @@ const FooterProductsList = ({ products, lang }) => {
 																>
 																	<Link
 																		href={`/${lang}/catalog?category=${id}&sub_category=${subCategory.uid}`}
+																		aria-label={`navigate to ${subCategory.title} subcategory`}
 																		onMouseDown={() => {
 																			onClose();
 																		}}

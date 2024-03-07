@@ -71,7 +71,7 @@ const BreadcrumbBar = ({
 			{pathSegments.length > 0 && (
 				<Flex alignItems={'start'} fontSize={'14px'} textColor={'#A28445'}>
 					<Text>
-						<Link href={`/${lang}`}>
+						<Link href={`/${lang}`} aria-label="navigate to home page">
 							<HomeIcon />
 						</Link>
 					</Text>
@@ -84,6 +84,7 @@ const BreadcrumbBar = ({
 						>
 							{segment === 'catalog' && (
 								<Link
+									aria-label="navigate to catalog page"
 									href={callbackPath || '/catalog'}
 									onClick={() => {
 										localStorage.removeItem('callbackPath');
@@ -95,7 +96,10 @@ const BreadcrumbBar = ({
 							{index < pathSegments.length - 1 &&
 								segment !== lang &&
 								segment !== 'catalog' && (
-									<Link href={`/${pathSegments.slice(0, index + 1).join('/')}`}>
+									<Link
+										href={`/${pathSegments.slice(0, index + 1).join('/')}`}
+										aria-label={`navigate to ${segment}`}
+									>
 										{segment}
 									</Link>
 								)}

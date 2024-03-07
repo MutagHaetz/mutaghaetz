@@ -47,6 +47,7 @@ const Contact = ({ lang, dictionary, contacts }) => {
 								</Box>
 								{addressUrl && address && (
 									<Link
+										aria-label="navigate to address on map"
 										_hover={{ textDecoration: 'none' }}
 										href={addressUrl}
 										rel={'noopener noreferrer nofollow'}
@@ -73,6 +74,7 @@ const Contact = ({ lang, dictionary, contacts }) => {
 							<PhoneIcon />
 							{phone && (
 								<Link
+									aria-label="make a phone call"
 									_hover={{ textDecoration: 'none' }}
 									href={`tel:+${phone}`}
 									display="flex"
@@ -98,6 +100,7 @@ const Contact = ({ lang, dictionary, contacts }) => {
 							<EmailIcon />
 							{email && (
 								<Link
+									aria-label="send email"
 									_hover={{ textDecoration: 'none' }}
 									href={`mailto:${email}`}
 								>

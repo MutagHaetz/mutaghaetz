@@ -26,7 +26,7 @@ const ProductItem = ({
 	dictionary,
 	isSlide = false,
 }) => {
-	const [isModileScreen] = useMediaQuery('(max-width: 1024px)');
+	const [isMobileScreen] = useMediaQuery('(max-width: 1024px)');
 
 	const [isFavorite, setIsFavorite] = useState(
 		favs?.some(item => item.id === product.id)
@@ -83,12 +83,13 @@ const ProductItem = ({
 				onClick={() => {
 					setCallbackPath();
 				}}
+				aria-label={`navigate to ${product?.title || ''} details`}
 			>
 				<article>
 					<Box
 						borderRadius={'2px'}
 						className="product_card"
-						filter={isModileScreen ? 'brightness(100%)' : 'brightness(80%)'}
+						filter={isMobileScreen ? 'brightness(100%)' : 'brightness(80%)'}
 						position="relative"
 						z-index="2"
 						width="100%"

@@ -25,6 +25,7 @@ const ProfileMenu = ({ hasToken, lang, onClose, dictionary }) => {
 				<Flex
 					as={Link}
 					href={`/${lang}/profile`}
+					aria-label="navigate to user profile page"
 					stroke={'#FFFFFF'}
 					flexDir={'row'}
 					transition={'stroke 0.3s'}
@@ -50,6 +51,7 @@ const ProfileMenu = ({ hasToken, lang, onClose, dictionary }) => {
 				>
 					<Flex
 						as={Link}
+						aria-label="navigate to user favorites page"
 						href={`/${lang}/profile/favorites`}
 						fill={'#FFFFFF'}
 						stroke={'#FFFFFF'}

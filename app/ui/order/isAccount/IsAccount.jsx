@@ -25,11 +25,13 @@ const IsAccount = ({ dictionary, lang }) => {
 					borderBottom={'1px solid white'}
 					paddingBottom={'2px'}
 					_hover={{ color: '#ccc' }}
+					aria-label="navigate to login page"
 				>
 					{dictionary.order.login}
 				</Link>{' '}
 				or{' '}
 				<Link
+					aria-label="navigate to register page"
 					onClick={() => {
 						localStorage.setItem('callbackPath', JSON.stringify(pathname));
 					}}
