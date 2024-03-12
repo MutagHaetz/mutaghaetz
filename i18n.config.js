@@ -1,6 +1,6 @@
 export const i18n = {
-	defaultLocale: 'en',
-	locales: ['en', 'he'],
+	defaultLocale: 'he',
+	locales: ['he', 'en'],
 	detection: {
 		order: ['cookie', 'path'],
 	},

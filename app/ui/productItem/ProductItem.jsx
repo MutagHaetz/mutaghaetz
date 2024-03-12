@@ -194,6 +194,7 @@ const ProductItem = ({
 					<CallToAuth
 						setCallbackPath={setCallbackPath}
 						dictionary={dictionary}
+						lang={lang}
 					/>
 				)
 			)}

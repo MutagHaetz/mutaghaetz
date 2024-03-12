@@ -301,7 +301,7 @@ const ProductsGrid = ({ lang, heading, dictionary, isAuth }) => {
 							</Link>
 						</Box>
 						<Box as="li" borderBottom={'1px solid white'}>
-							<Link href={'/'}>Return to the home page</Link>
+							<Link href={`/${lang}`}>Return to the home page</Link>
 						</Box>
 					</Flex>
 				</Center>

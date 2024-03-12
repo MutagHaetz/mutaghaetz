@@ -21,7 +21,12 @@ import ProviderButton from '../providerButton/ProviderButton';
 import EmailIcon from '../svg/EmailIcon';
 import Star from '../svg/Star';
 
-const CallToAuth = ({ setCallbackPath, dictionary, pos = 'absolute' }) => {
+const CallToAuth = ({
+	setCallbackPath,
+	dictionary,
+	pos = 'absolute',
+	lang,
+}) => {
 	return (
 		<Popover>
 			<PopoverTrigger>
@@ -83,7 +88,7 @@ const CallToAuth = ({ setCallbackPath, dictionary, pos = 'absolute' }) => {
 										<EmailIcon />
 									</Box>
 									<Link
-										href={'/auth/login'}
+										href={`/${lang}/auth/login`}
 										aria-label="navigate to login page"
 									>
 										{dictionary.cta.email}

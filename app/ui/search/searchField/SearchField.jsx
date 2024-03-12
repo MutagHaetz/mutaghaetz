@@ -188,7 +188,7 @@ const SearchField = ({ lang, onClose, setQuery, query, dictionary }) => {
 					>
 						<Link
 							aria-label="navigate to catalog page"
-							href={`/catalog`}
+							href={`/${lang}/catalog`}
 							style={{
 								display: 'flex',
 								width: '100%',

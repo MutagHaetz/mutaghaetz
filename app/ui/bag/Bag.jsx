@@ -152,7 +152,7 @@ const Bag = ({ bagData, hasToken, onClose, dictionary }) => {
 
 						<Button
 							as={Link}
-							href={`/order`}
+							href={`/${lang}/order`}
 							isLoading={isOrdering}
 							isDisabled={isOrdering}
 							maxW={{ base: '100%', md: '360px' }}

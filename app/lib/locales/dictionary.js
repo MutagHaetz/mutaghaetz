@@ -8,7 +8,7 @@ const dictionaries = {
 };
 
 const fetchDictionary = async locale => {
-	if (!locale) return dictionaries['en']();
+	if (!locale) return dictionaries['he']();
 
 	return dictionaries[locale]();
 };
