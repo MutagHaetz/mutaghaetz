@@ -8,7 +8,7 @@ const ContactsList = ({ contacts, lang, inFooter = false }) => {
 			<Link
 				aria-label={aria}
 				key={text}
-				href={href || '/'}
+				href={href || `/${lang}`}
 				rel="noopener noreferrer nofollow"
 				target={!href.includes('tel') ? '_blank' : null}
 				display="flex"

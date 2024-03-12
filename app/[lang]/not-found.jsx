@@ -22,7 +22,7 @@ async function NotFound() {
 					{notFoundMessage[0]}
 				</Heading>
 				<Text>{notFoundMessage[1]}</Text>
-				<Link href="/" aria-label="Navigate to home page">
+				<Link href={`/${lang}/`} aria-label="Navigate to home page">
 					<Btn>Let&apos;s try again</Btn>
 					<Btn>{tryAgain}</Btn>
 				</Link>

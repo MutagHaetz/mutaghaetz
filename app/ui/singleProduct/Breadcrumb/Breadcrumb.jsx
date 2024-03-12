@@ -85,7 +85,7 @@ const BreadcrumbBar = ({
 							{segment === 'catalog' && (
 								<Link
 									aria-label="navigate to catalog page"
-									href={callbackPath || '/catalog'}
+									href={callbackPath || `/${lang}/catalog`}
 									onClick={() => {
 										localStorage.removeItem('callbackPath');
 									}}
@@ -136,6 +136,7 @@ const BreadcrumbBar = ({
 					pos={'static'}
 					dictionary={dictionary}
 					setCallbackPath={singleProductCallBackPath}
+					lang={lang}
 				/>
 			)}
 		</>
