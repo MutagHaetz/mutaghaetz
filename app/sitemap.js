@@ -27,12 +27,12 @@ export default async function sitemap() {
 		priority: 1,
 	}));
 
-	// const productEntriesEn = products.map(({ attributes }) => ({
-	// 	url: `${process.env.NEXT_PUBLIC_URL}/en/catalog/${attributes.uid}`,
-	// 	lastModified: new Date(attributes.updatedAt),
-	// 	changeFrequency: 'monthly',
-	// 	priority: 1,
-	// }));
+	const productEntriesEn = products.map(({ attributes }) => ({
+		url: `${process.env.NEXT_PUBLIC_URL}/en/catalog/${attributes.uid}`,
+		lastModified: new Date(attributes.updatedAt),
+		changeFrequency: 'monthly',
+		priority: 1,
+	}));
 
 	return [
 		{
@@ -101,7 +101,7 @@ export default async function sitemap() {
 			changeFrequency: 'monthly',
 			priority: 0.8,
 		},
-		// ...postEntriesEn,
+		...productEntriesEn,
 		...productEntriesHe,
 	];
 }

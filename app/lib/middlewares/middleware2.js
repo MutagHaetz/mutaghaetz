@@ -25,6 +25,7 @@ export function withI18nMiddleware(middleware) {
 		const search = request.nextUrl.search;
 
 		if (pathname === '/sitemap.xml') return;
+		if (pathname === '/robots.txt') return;
 
 		const lang = cookies().get('lang')?.value;
 
