@@ -1,7 +1,11 @@
 import { fetchProducts } from './lib/api/instance';
 
 export default async function sitemap() {
-	const { total } = await fetchProducts('he', 'createdAt', 'desc', 1, false, 1);
+	const data = await fetchProducts('he', 'createdAt', 'desc', 1, false, 1);
+	let total = 0;
+	if (data) {
+		total = data.total;
+	}
 
 	const pageCount = Math.ceil(total / 25);
 
@@ -27,12 +31,12 @@ export default async function sitemap() {
 		priority: 1,
 	}));
 
-	// const productEntriesEn = products.map(({ attributes }) => ({
-	// 	url: `${process.env.NEXT_PUBLIC_URL}/en/catalog/${attributes.uid}`,
-	// 	lastModified: new Date(attributes.updatedAt),
-	// 	changeFrequency: 'monthly',
-	// 	priority: 1,
-	// }));
+	const productEntriesEn = products.map(({ attributes }) => ({
+		url: `${process.env.NEXT_PUBLIC_URL}/en/catalog/${attributes.uid}`,
+		lastModified: new Date(attributes.updatedAt),
+		changeFrequency: 'monthly',
+		priority: 1,
+	}));
 
 	return [
 		{
@@ -101,7 +105,7 @@ export default async function sitemap() {
 			changeFrequency: 'monthly',
 			priority: 0.8,
 		},
-		// ...postEntriesEn,
+		...productEntriesEn,
 		...productEntriesHe,
 	];
 }

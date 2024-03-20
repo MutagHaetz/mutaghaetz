@@ -31,15 +31,13 @@ const Homepage = async ({ params: { lang } }) => {
 	return (
 		<Box>
 			<Hero dictionary={dictionary} lang={lang} />
-			{/* {'Удалить когда заполнят каталог'} */}
-			{lang === 'he' && (
-				<CatalogSlider
-					products={products}
-					lang={lang}
-					dictionary={dictionary}
-					heading={dictionary.header.navItems[1].title}
-				/>
-			)}
+
+			<CatalogSlider
+				products={products}
+				lang={lang}
+				dictionary={dictionary}
+				heading={dictionary.header.navItems[1].title}
+			/>
 			<Benefits dictionary={dictionary} />
 			<About dictionary={dictionary} contacts={contacts} lang={lang} />
 			<Contact lang={lang} dictionary={dictionary} contacts={contacts} />
