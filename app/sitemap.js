@@ -1,7 +1,11 @@
 import { fetchProducts } from './lib/api/instance';
 
 export default async function sitemap() {
-	const { total } = await fetchProducts('he', 'createdAt', 'desc', 1, false, 1);
+	const data = await fetchProducts('he', 'createdAt', 'desc', 1, false, 1);
+	let total = 0;
+	if (data) {
+		total = data.total;
+	}
 
 	const pageCount = Math.ceil(total / 25);
 
